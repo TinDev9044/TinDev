@@ -10,6 +10,9 @@ Database password : Abcd@123
 Github id : tindev9044@gmail.com
 Github password : tindev@9044
 
+Heroku id: tindev9044@gmai.com
+Heroku pass: tindev@9044
+
 Packages to be installed :
 
 1-npm install express cors mongoose dotenv

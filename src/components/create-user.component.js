@@ -6,10 +6,12 @@ export default class CreateUser extends Component {
     super(props);
 //binding so that this can be used
     this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      username: ''
+      username: '',
+      password: ''
     }
   }
 
@@ -18,22 +20,25 @@ export default class CreateUser extends Component {
       username: e.target.value
     })
   }
+  onChangePassword(e) {
+    this.setState({
+      password: e.target.value
+    })
+  }
 
   onSubmit(e) {
     e.preventDefault();
 
     const user = {
-      username: this.state.username
+      username: this.state.username,
+      password: this.state.password
     }
 
     console.log(user);
 
     axios.post('http://localhost:5000/users/add', user)
       .then(res => console.log(res.data));
-//setting the state blank again
-    this.setState({
-      username: ''
-    })
+      window.location = '/';
   }
 
   render() {
@@ -42,14 +47,22 @@ export default class CreateUser extends Component {
         <h3>Create New User</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group"> 
-            <label>Username: </label>
-            <input  type="text"
+            <input  type="text" placeholder="Phone Number"
                 required
                 className="form-control"
                 //setting the username to blank
                 value={this.state.username}
                 //changing the value of state.username
                 onChange={this.onChangeUsername}
+                />
+<br/>
+            <input  type="password" placeholder="Password"
+                required
+                className="form-control"
+                //setting the username to blank
+                value={this.state.password}
+                //changing the value of state.username
+                onChange={this.onChangePassword}
                 />
           </div>
           <div className="form-group">
