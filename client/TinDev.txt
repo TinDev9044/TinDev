@@ -1,0 +1,52 @@
+git Gmail Id : tindev9044@gmail.com
+password : Abcd@123
+
+Mongodb Atlas login email:-tindev9044@gmail.com
+password :- Abcd@123
+ 
+Database username : TinDev
+Database password : Abcd@123
+
+Github id : tindev9044@gmail.com
+Github password : tindev@9044
+
+Heroku id: tindev9044@gmai.com
+Heroku pass: tindev@9044
+
+Packages to be installed :
+
+1-npm install express cors mongoose dotenv
+2-npm install -g nodemon 
+3-npm install bootstrap
+4-npm install react-router-dom
+5-npm install axios
+
+Command for storing info :
+
+1-npm init -y
+
+
+GIT COMMANDS :
+
+1- git --version	(For version info)
+2- git config --global user.name "Jafar" 
+3- git confog --global user.email "email"
+4- git config --list	(For config file details)
+5- clear 	(for clearing screen)
+6- git init	(to initialize git)
+7- ls -la	(view all folders)
+8-git add .	(add all the changes to staging area)
+9-git commit -m "message telling why u made the changes"	(make the changes permanent)
+10-git log	(to view commit hostory)
+11-git log --author=""	(view commits of a specific person)
+12-git status	(to know if there is anything to commit)
+13-git diff	(know the changes made)
+14-git diff --staged	(changes between staging area and commited files)
+15-git rm "filename"	(for removing files)
+16-git checkout -- "filename"	(restore file from staging area)
+17-git reset HEAD "filename"	(remove file from staging area)
+18-git checkout "commit number" -- "filename"		(get file back after commit)
+19-git remote add "URl name" "url link"
+20-git push -u "url name" master
+21-
+
