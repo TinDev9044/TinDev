@@ -4,8 +4,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require("path");
 
-require('dotenv').config();
 
+
+require('dotenv').config();
 //for starting server
 const app = express();
 const port = process.env.PORT || 5000;
@@ -35,6 +36,7 @@ const usersRouter = require('./routes/users');
 app.use(express.static(path.join(__dirname, "client", "build")))
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
+
 
 //heroku added
 app.get("*", (req, res) => {

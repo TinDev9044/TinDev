@@ -5,247 +5,403 @@ export default class Welcome extends Component {
   
   render() {
     return (
-      <div>
-      <nav className="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+      <div className="about-us">
+        
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <nav id="navbar-main" className="navbar navbar-main navbar-expand-lg bg-primary navbar-dark headroom">
     <div className="container">
-      <div className="navbar-translate">
-        <a className="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html">
-          Bhalla </a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="sr-only">Toggle navigation</span>
-          <span className="navbar-toggler-icon"></span>
-          <span className="navbar-toggler-icon"></span>
-          <span className="navbar-toggler-icon"></span>
-        </button>
-      </div>
-      <div className="collapse navbar-collapse">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <a className="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank" data-original-title="Follow us on Twitter" rel="nofollow">
-              <i className="fa fa-twitter"></i>
+      <a className="navbar-brand mr-lg-5" href="https://demos.creative-tim.com/index.html">
+        <img style={{height: "50px"}} src="../assets/img/brand/logo2.png"/>
+      </a>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="navbar-collapse collapse" id="navbar_global">
+        <div className="navbar-collapse-header">
+          <div className="row">
+            <div className="col-6 collapse-brand">
+              <a href="https://demos.creative-tim.com/index.html">
+                <img src="../assets/img/brand/logo2.png"/>
+              </a>
+            </div>
+            <div className="col-6 collapse-close">
+              <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul className="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
+          <li className="nav-item dropdown">
+          <Link to="/user">
+            <a href="javascript:;" className="nav-link" data-toggle="dropdown" role="button">
+              <i className="ni ni-single-copy-04 d-lg-none"></i>
+              <span className="nav-link-inner--text">Signup</span>
             </a>
+            </Link>
+            
           </li>
-          <li className="nav-item">
-            <a className="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank" data-original-title="Like us on Facebook" rel="nofollow">
-              <i className="fa fa-facebook-square"></i>
+          <li className="nav-item dropdown">
+            <a href="javascript:;" className="nav-link" data-toggle="dropdown" role="button">
+              <i className="ni ni-tablet-button d-lg-none"></i>
+              <span className="nav-link-inner--text">Login</span>
             </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank" data-original-title="Follow us on Instagram" rel="nofollow">
-              <i className="fa fa-instagram"></i>
-            </a>
-          </li>
-
-          <li className="nav-item">
-            <button className="btn btn-danger">Log-In<div className="ripple-container"></div></button>
-          </li>
-
-          <li className="nav-item">
-            <button className="btn btn-danger" style={{marginLeft: "20px", marginRight: "-20px"}}>Sign-Up<div className="ripple-container"></div></button>
+            
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <div className="page-header header-filter" data-parallax="true" style={{backgroundImage: "url('./assets/img/profile_city.jpg')"}}>
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6">
-          <h1 className="title">Your Story Starts With Us.</h1>
-          <h4>Every landing page needs a small description after the big bold title, that&apos;s why we added this text here. Add here all the information that can make you or your product create the first impression.</h4>
-          <br/>
-         
-            <Link to="/user" className="btn btn-danger btn-raised btn-lg"><i className="fa"></i> Get Started</Link>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-  <div className="main main-raised">
-    <div className="container">
-      <div className="section text-center">
-        <div className="row">
-          <div className="col-md-8 ml-auto mr-auto">
-            <h2 className="title">Let&apos;s talk product</h2>
-            <h5 className="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn&apos;t scroll to get here. Add a button if you want the user to see more.</h5>
+  <div className="wrapper">
+    <header className="header-5">
+      <nav className="navbar navbar-expand-lg navbar-absolute">
+        <div className="container">
+          <div className="navbar-translate">
+            <a className="navbar-brand" href="javascript:;">Creative Tim</a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#example-header-6" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
           </div>
-        </div>
-        <div className="features">
-          <div className="row">
-            <div className="col-md-4">
-              <div className="info">
-                <div className="icon icon-info">
-                  <i className="material-icons">chat</i>
-                </div>
-                <h4 className="info-title">Free Chat</h4>
-                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="info">
-                <div className="icon icon-success">
-                  <i className="material-icons">verified_user</i>
-                </div>
-                <h4 className="info-title">Verified Users</h4>
-                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="info">
-                <div className="icon icon-danger">
-                  <i className="material-icons">computer</i>
-                </div>
-                <h4 className="info-title">Good Projects</h4>
-                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="section text-center">
-        <h2 className="title">Here is our team</h2>
-        <div className="team">
-          <div className="row">
-            <div className="col-md-4">
-              <div className="team-player">
-                <div className="card card-plain">
-                  <div className="col-md-6 ml-auto mr-auto">
-                    <img src="https://scontent-bom1-2.cdninstagram.com/v/t51.2885-15/e35/23734761_129853594367167_3508648682062872576_n.jpg?_nc_ht=scontent-bom1-2.cdninstagram.com&_nc_cat=107&_nc_ohc=PlIn7QCfLNQAX8MVR2q&oh=07dcf795ecb79e467b5079c02ee26cb2&oe=5EFC4D1F" alt="Raised Image" className="img-raised rounded img-fluid"/>
-                  </div>
-                  <h4 className="card-title">Jafar Abbas
-                    <br/>
-                    <small className="card-description text-muted">Developer</small>
-                  </h4>
-                  <div className="card-body">
-                    <p className="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                      <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                  </div>
-                  <div className="card-footer justify-content-center">
-                    <a href="#pablo" className="btn btn-link btn-just-icon"><i className="fa fa-twitter"></i></a>
-                    <a href="#pablo" className="btn btn-link btn-just-icon"><i className="fa fa-instagram"></i></a>
-                    <a href="#pablo" className="btn btn-link btn-just-icon"><i className="fa fa-facebook-square"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="team-player">
-                <div className="card card-plain">
-                  <div className="col-md-6 ml-auto mr-auto">
-                    <img src="https://media-exp1.licdn.com/dms/image/C5103AQGIeNRYarHoAQ/profile-displayphoto-shrink_200_200/0?e=1596067200&v=beta&t=f6xoBlR0uQ8IqD4yEqVNa0DLnpTwgJWmMR68cnl2YVs" alt="Thumbnail Image" className="img-raised rounded img-fluid"/>
-                  </div>
-                  <h4 className="card-title">Gaurav Bhalla
-                    <br/>
-                    <small className="card-description text-muted">Developer</small>
-                  </h4>
-                  <div className="card-body">
-                    <p className="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                      <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                  </div>
-                  <div className="card-footer justify-content-center">
-                    <a href="#pablo" className="btn btn-link btn-just-icon"><i className="fa fa-twitter"></i></a>
-                    <a href="#pablo" className="btn btn-link btn-just-icon"><i className="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="team-player">
-                <div className="card card-plain">
-                  <div className="col-md-6 ml-auto mr-auto">
-                    <img src="https://scontent-bom1-1.cdninstagram.com/v/t51.2885-15/e35/74923719_329038091293780_3706479781344968805_n.jpg?_nc_ht=scontent-bom1-1.cdninstagram.com&_nc_cat=104&_nc_ohc=KelWUJKWTIkAX_Q2LLh&oh=040a8a19da515265ec95e21334d01e35&oe=5EFB7F82" alt="Thumbnail Image" className="img-raised rounded img-fluid"/>
-                  </div>
-                  <h4 className="card-title">Ayush Srivastava
-                    <br/>
-                    <small className="card-description text-muted">Developer</small>
-                  </h4>
-                  <div className="card-body">
-                    <p className="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                      <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                  </div>
-                  <div className="card-footer justify-content-center">
-                    <a href="#pablo" className="btn btn-link btn-just-icon"><i className="fa fa-twitter"></i></a>
-                    <a href="#pablo" className="btn btn-link btn-just-icon"><i className="fa fa-instagram"></i></a>
-                    <a href="#pablo" className="btn btn-link btn-just-icon"><i className="fa fa-facebook-square"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="section section-contacts">
-        <div className="row">
-          <div className="col-md-8 ml-auto mr-auto">
-            <h2 className="text-center title">Work with us</h2>
-            <h4 className="text-center description">Divide details about your product or agency work into parts. Write a few lines about each one and contact us about any further collaboration. We will responde get back to you in a couple of hours.</h4>
-            <form className="contact-form">
+          <div className="collapse navbar-collapse" id="example-header-6">
+            <div className="navbar-collapse-header">
               <div className="row">
-                <div className="col-md-6">
-                  <div className="form-group">
-                    <label className="bmd-label-floating">Your Name</label>
-                    <input type="email" className="form-control"/>
-                  </div>
+                <div className="col-6 collapse-brand">
+                  <a>
+                    Tin <span> DEV </span>
+                  </a>
                 </div>
-                <div className="col-md-6">
-                  <div className="form-group">
-                    <label className="bmd-label-floating">Your Email</label>
-                    <input type="email" className="form-control"/>
-                  </div>
-                </div>
-              </div>
-              <div className="form-group">
-                <label for="exampleMessage" className="bmd-label-floating">Your Message</label>
-                <textarea type="email" className="form-control" rows="4" id="exampleMessage"></textarea>
-              </div>
-              <div className="row">
-                <div className="col-md-4 ml-auto mr-auto text-center">
-                  <button className="btn btn-primary btn-raised">
-                    Send Message
+                <div className="col-6 collapse-close text-right">
+                  <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#example-header-6" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
                   </button>
                 </div>
               </div>
-            </form>
+            </div>
+            <ul className="navbar-nav mx-auto">
+              <li className="nav-item">
+                <a className="nav-link" href="javascript:;">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="javascript:;">
+                  About Us
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="javascript:;">
+                  Products
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="javascript:;">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+            <ul className="nav navbar-nav navbar-right">
+              <li className="nav-item">
+                <a className="nav-link" href="https://twitter.com/CreativeTim">
+                  <i className="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="https://www.facebook.com/CreativeTim">
+                  <i className="fab fa-facebook-square"></i>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="https://www.instagram.com/CreativeTimOfficial">
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div className="page-header">
+        <div className="container">
+          <div className="row align-items-center text-left">
+            <div className="col-lg-5 col-12">
+              <h1 className="display-3">Connect with us,<span className="text-primary"> Develop Anything.</span></h1>
+              <p className="lead pb-4">We aim high at being focused on building relationships with our clients and community. Using our creative gifts drives this foundation.</p>
+              <div className="row row-input">
+                <div className="col-sm-8 col-12">
+                  <input type="email" className="form-control" name="email" id="signupSrEmail" placeholder="Your email" aria-label="Your email"/>
+                </div>
+                <div className="col-sm-4 col-12 pl-lg-0">
+                  <button type="submit" className="btn btn-primary btn-block">More</button>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-7 col-12 pl-0">
+              <img className="ml-lg-5" src="../assets/img/ill/bg6-2.svg" width="100%"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div className="team-2">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-8 mx-auto text-center mb-5">
+            <h3 className="display-3">The Executive Team</h3>
+            <h4 className="lead">This is the paragraph where you can write more details about your team. Keep you user engaged by providing meaningful information.</h4>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-lg-4 col-md-6">
+            <div className="card card-profile" data-image="profile-image">
+              <div className="card-header">
+                <div className="card-image">
+                  <div className="dropdown">
+                    <button type="button" className="btn btn-link dropdown-toggle btn-icon-only" data-toggle="dropdown" aria-expanded="false">
+                      <i className="ni ni-settings-gear-65"></i>
+                    </button>
+                    <div className="dropdown-menu dropdown-menu-right" x-placement="bottom-end">
+                      <a className="dropdown-item" href="javascript:;">Edit Profile</a>
+                      <a className="dropdown-item" href="javascript:;">Settings</a>
+                      <a className="dropdown-item" href="javascript:;">Log out</a>
+                    </div>
+                  </div>
+                  <a href="javascript:;">
+                    <img className="img rounded" src="../assets/img/faces/ali-pazani.jpg"/>
+                  </a>
+                </div>
+              </div>
+              <div className="card-body pt-0">
+                <h4 className="display-4 mb-0">Sofia Scarlett</h4>
+                <p className="lead">UX Designer</p>
+                <div className="table-responsive">
+                  <ul className="list-unstyled ">
+                    <li className="py-1">
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <div className="badge badge-circle badge-info mr-3">
+                            <i className="ni ni-atom"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 className="mb-1">Keen on great design</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="py-1">
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <div className="badge badge-circle badge-success mr-3">
+                            <i className="ni ni-user-run"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 className="mb-1">Outdors lover</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="py-1">
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <div className="badge badge-circle badge-danger mr-3">
+                            <i className="ni ni-chart-bar-32"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 className="mb-1">Super friendly support team</h6>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div className="card card-profile" data-image="profile-image">
+              <div className="card-header">
+                <div className="card-image">
+                  <div className="dropdown">
+                    <button type="button" className="btn btn-link dropdown-toggle btn-icon-only" data-toggle="dropdown" aria-expanded="false">
+                      <i className="ni ni-settings-gear-65"></i>
+                    </button>
+                    <div className="dropdown-menu dropdown-menu-right" x-placement="bottom-end">
+                      <a className="dropdown-item" href="javascript:;">Edit Profile</a>
+                      <a className="dropdown-item" href="javascript:;">Settings</a>
+                      <a className="dropdown-item" href="javascript:;">Log out</a>
+                    </div>
+                  </div>
+                  <a href="javascript:;">
+                    <img className="img rounded" src="../assets/img/faces/team-5.jpg"/>
+                  </a>
+                </div>
+              </div>
+              <div className="card-body pt-0">
+                <h4 className="display-4 mb-0">Dylan Wyatt</h4>
+                <p className="lead">Team Lead</p>
+                <div className="table-responsive">
+                  <ul className="list-unstyled ">
+                    <li className="py-1">
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <div className="badge badge-circle badge-info mr-3">
+                            <i className="ni ni-atom"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 className="mb-1">Dedicated entrepreneur</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="py-1">
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <div className="badge badge-circle badge-success mr-3">
+                            <i className="ni ni-user-run"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 className="mb-1">Urban exploration</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="py-1">
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <div className="badge badge-circle badge-danger mr-3">
+                            <i className="ni ni-chart-bar-32"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 className="mb-1">Able to get good at everything</h6>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div className="card card-profile" data-image="profile-image">
+              <div className="card-header">
+                <div className="card-image">
+                  <div className="dropdown">
+                    <button type="button" className="btn btn-link dropdown-toggle btn-icon-only" data-toggle="dropdown" aria-expanded="false">
+                      <i className="ni ni-settings-gear-65"></i>
+                    </button>
+                    <div className="dropdown-menu dropdown-menu-right" x-placement="bottom-end">
+                      <a className="dropdown-item" href="javascript:;">Edit Profile</a>
+                      <a className="dropdown-item" href="javascript:;">Settings</a>
+                      <a className="dropdown-item" href="javascript:;">Log out</a>
+                    </div>
+                  </div>
+                  <a href="javascript:;">
+                    <img className="img rounded" src="../assets/img/faces/atikh.jpg"/>
+                  </a>
+                </div>
+              </div>
+              <div className="card-body pt-0">
+                <h4 className="display-4 mb-0">Mila Skylar</h4>
+                <p className="lead">Content Creator</p>
+                <div className="table-responsive">
+                  <ul className="list-unstyled ">
+                    <li className="py-1">
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <div className="badge badge-circle badge-info mr-3">
+                            <i className="ni ni-atom"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 className="mb-1">High quality publication</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="py-1">
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <div className="badge badge-circle badge-success mr-3">
+                            <i className="ni ni-user-run"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 className="mb-1">Storytelling</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="py-1">
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <div className="badge badge-circle badge-danger mr-3">
+                            <i className="ni ni-chart-bar-32"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 className="mb-1">Master of words qualification</h6>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <footer className="footer footer-default">
-    <div className="container">
-      <nav className="float-left">
-        <ul>
-          <li>
-            <a href="https://www.creative-tim.com/">
-              Creative Tim
-            </a>
-          </li>
-          <li>
-            <a href="https://www.creative-tim.com/presentation">
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="https://www.creative-tim.com/blog">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="https://www.creative-tim.com/license">
-              Licenses
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div className="copyright float-right">
-        &copy;
-        <script>
-          document.write(new Date().getFullYear())
-        </script>, made with <i className="material-icons">favorite</i> by
-        <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a> for a better web.
+   
+  
+ 
+    <footer className="footer">
+      <div className="container">
+        <div className="row row-grid align-items-center mb-5">
+          <div className="col-lg-6">
+            <h3 className="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
+            <h4 className="mb-0 font-weight-light">Let's get in touch on any of these platforms.</h4>
+          </div>
+          <div className="col-lg-6 text-lg-center btn-wrapper">
+            <button target="_blank" href="https://twitter.com/creativetim" rel="nofollow" className="btn btn-icon-only btn-twitter rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
+              <span className="btn-inner--icon"><i className="fa fa-twitter"></i></span>
+            </button>
+            <button target="_blank" href="https://www.facebook.com/CreativeTim/" rel="nofollow" className="btn-icon-only rounded-circle btn btn-facebook" data-toggle="tooltip" data-original-title="Like us">
+              <span className="btn-inner--icon"><i className="fab fa-facebook"></i></span>
+            </button>
+            <button target="_blank" href="https://dribbble.com/creativetim" rel="nofollow" className="btn btn-icon-only btn-dribbble rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
+              <span className="btn-inner--icon"><i className="fa fa-dribbble"></i></span>
+            </button>
+            <button target="_blank" href="https://github.com/creativetimofficial" rel="nofollow" className="btn btn-icon-only btn-github rounded-circle" data-toggle="tooltip" data-original-title="Star on Github">
+              <span className="btn-inner--icon"><i className="fa fa-github"></i></span>
+            </button>
+          </div>
+        </div>
+        <hr/>
+        <div className="row align-items-center justify-content-md-between">
+          <div className="col-md-6">
+            <div className="copyright">
+              &copy; 2020 <a href="#" target="_blank">Creative Tim</a>.
+            </div>
+          </div>
+          <div className="col-md-6">
+            <ul className="nav nav-footer justify-content-end">
+              <li className="nav-item">
+                <a href="#" className="nav-link" target="_blank">Creative Tim</a>
+              </li>
+              <li className="nav-item">
+                <a href="#" className="nav-link" target="_blank">About Us</a>
+              </li>
+              <li className="nav-item">
+                <a href="https://www.creative-tim.com/blog" className="nav-link" target="_blank">Blog</a>
+              </li>
+              <li className="nav-item">
+                <a href="#" className="nav-link" target="_blank">License</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
       </div>
     )
   }
