@@ -4,53 +4,48 @@ export default class Confirmation extends Component {
     constructor(props) {
       super(props);
   //binding so that this can be used
-      this.onChangeemail = this.onChangeemail.bind(this);
-      this.onChangePassword = this.onChangePassword.bind(this);
+      this.onChangeOtp = this.onChangeOtp.bind(this);
       this.onSubmit = this.onSubmit.bind(this);
       this.state = {
-        email: '',
-        password: ''
+        otp: ''
       }
     }
-    onChangeemail(e) {
+    onChangeOtp(e) {
         this.setState({
-          email: e.target.value
+          otp: e.target.value
         })
       }
-      onChangePassword(e) {
-        this.setState({
-          password: e.target.value
-        })
-      }
-    
       onSubmit(e) {
         e.preventDefault();
     
-        const user = {
-          email: this.state.email,
-          password: this.state.password
+        const Otp = {
+          otp: this.state.otp
         }
     
-        console.log(user);
+        console.log(Otp);
     
-        axios.post('https://tindev9044.herokuapp.com/confirmation/', user)
-          .then(res => console.log(res.data));
-      }
+        axios.post('https://tindev9044.herokuapp.com/confirmation/', Otp)
+          .then(res => {
+
+            if (res.status == 200) {
+              window.location = "/user"
+          } 
+      })
+      .catch(function(error) {
+          window.location = "/confirmation"
+      })
+
+          }
+      
 render(){
     return(<div>
         <form onSubmit={this.onSubmit}>
             <input type="text" 
             required
                 //setting the email to blank
-                value={this.state.email}
+                value={this.state.otp}
                 //changing the value of state.email
-                onChange={this.onChangeemail}></input>
-            <input type="password"
-            required
-                //setting the email to blank
-                value={this.state.password}
-                //changing the value of state.email
-                onChange={this.onChangePassword}></input>
+                onChange={this.onChangeOtp}></input>
                 <input type="submit"></input>
         </form>
         

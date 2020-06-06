@@ -49,7 +49,7 @@ export default class CreateUser extends Component {
     console.log(user);
 
     axios.post('https://tindev9044.herokuapp.com/users/add', user)
-      .then(res => console.log(res.data));
+      .then(res => console.log(res.status));
       window.location = '/confirmation';
   }
 
@@ -314,7 +314,7 @@ export default class CreateUser extends Component {
                 />
               </div>
             </div>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#modal-form">Sign Up</button>
+            <button className="btn btn-primary" >Sign Up</button>
           </form>
         </div>
         <div className="form-container sign-in-container">
@@ -370,38 +370,7 @@ export default class CreateUser extends Component {
         </div>
       </div>
     </div>
-    <div class="row">  
-    <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-        <div class="modal-content">
-          <div class="modal-body p-0">
-            <div class="card bg-secondary shadow border-0 mb-0">
-              <div class="card-header bg-white pb-5">
-                <div class="text-muted text-center mb-3">
-                  <small>Enter OTP sent on Mobile!</small>
-                </div>
-                <div class="btn-wrapper text-center">
-                  <form>
-                    <div class="form-group">
-                      <div class="input-group input-group-alternative">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                        </div>
-                        <input class="form-control" placeholder="One Time Password" type="password"/>
-                      </div>
-                    </div>
-                    <div class="text-center">
-                      <button type="button" class="btn btn-primary my-4">Validate</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-   </div> 
+    
     <footer className="footer">
       <div className="container">
         <div className="row row-grid align-items-center mb-5">
@@ -449,8 +418,6 @@ export default class CreateUser extends Component {
           </div>
         </div>
       </div>
-
-      
     </footer>
   </div>
       </div>
