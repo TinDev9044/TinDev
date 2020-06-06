@@ -6,6 +6,7 @@ import Navbar from "./components/navbar.component"
 import EditExercise from "./components/edit-exercise.component";
 import CreateExercise from "./components/create-exercise.component";
 import CreateUser from "./components/create-user.component";
+import Confirmation from "./components/confirmation.component";
 import Welcome from "./components/welcome.component"
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       
       <Route path="/" exact component={Welcome} />
       <Route path="/user" component={CreateUser} />
+      <Route path="/confirmation" component={Confirmation} />
       
     </Router>
   );
