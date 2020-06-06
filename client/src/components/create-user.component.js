@@ -48,9 +48,9 @@ export default class CreateUser extends Component {
 
     console.log(user);
 
-    axios.post('https://tindev9044.herokuapp.com/users/add', user)
+    axios.post('http://localhost:5000/users/add', user)
       .then(res => console.log(res.data));
-      window.location = '/';
+      
   }
 
   render() {

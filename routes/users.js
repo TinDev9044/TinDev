@@ -21,7 +21,7 @@ router.route('/add').post((req, res, next) => {
     if (err) { return res.status(500).send({ msg: err.message }); }
 
     // Create a verification token for this user
-    var token = new Token({ _userId: user._id, token: crypto.randomBytes(16).toString('hex') });
+    var token = new Token({ _userId: newUser._id, token: crypto.randomBytes(16).toString('hex') });
 
     // Save the verification token
     token.save(function (err) {
@@ -29,10 +29,12 @@ router.route('/add').post((req, res, next) => {
 
         // Send the email
         var transporter = nodemailer.createTransport({ service: 'gmail', auth: { user: 'tindev9044@gmail.com', pass: 'Abcd@123' } });
-        var mailOptions = { from: 'tindev9044@gmail.com', to: user.email, subject: 'Account Verification Token', text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/confirmation\/' + token.token + '.\n' };
+        var mailOptions = { from: 'tindev9044@gmail.com', to: email, subject: 'Account Verification Token', text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/confirmation\/' + token.token + '.\n' };
         transporter.sendMail(mailOptions, function (err) {
-            if (err) { return res.status(500).send({ msg: err.message }); }
-            res.status(200).send('A verification email has been sent to ' + user.email + '.');
+            if (err) { 
+              console.log(err);
+              return res.status(500).send({ msg: err.message }); }
+            res.status(200).send('A verification email has been sent to ' + email + '.');
         });
     });
 });
