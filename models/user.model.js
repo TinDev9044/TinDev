@@ -10,6 +10,10 @@ const userSchema = new Schema({
     trim: true,
     minlength: 3
   },
+  isVerified: { 
+    type: Boolean, 
+    default: false 
+  },
   password: {
     type: String,
     required: true,
