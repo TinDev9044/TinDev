@@ -25,7 +25,7 @@ router.route('/add').post((req, res, next) => {
 
     // Save the verification token
     token.save(function (err) {
-        if (err) { return res.status(500).send({ msg: err.message }); }
+        if (err) { return res.status(401).send({ msg: err.message }); }
         // Send the email
         var transporter = nodemailer.createTransport({ service: 'Gmail', auth: { user: 'tindev9044@gmail.com', pass: 'Abcd@1234' } });
         var mailOptions = { from: 'tindev9044@gmail.com', to: email, subject: 'Account Verification Token', text: 'Hello,\n\n' + 'Please verify your account by entering the OTP =====>'+ token.token + '.\n' };
@@ -33,7 +33,7 @@ router.route('/add').post((req, res, next) => {
             if (err) { 
               console.log(err);
               return res.status(500).send({ msg: err.message }); }
-            return(res.status(200).send('A verification email has been sent to ' + email + '.'));
+            return(res.status(200).send(email + 'Registered!' ));
         });
     });
 });

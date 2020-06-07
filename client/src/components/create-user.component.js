@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect} from 'react-router-dom';
 
 export default class CreateUser extends Component {
   constructor(props) {
@@ -10,10 +11,10 @@ export default class CreateUser extends Component {
     this.onSignUp = this.onSignUp.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     
-
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      submitted: false
     }
   }
   onSignUp(){
@@ -48,12 +49,23 @@ export default class CreateUser extends Component {
 
     console.log(user);
 
-    axios.post('https://tindev9044.herokuapp.com/users/add', user)
-      .then(res => console.log(res.status));
-      window.location = '/confirmation';
+    axios.post('http://localhost:5000/users/add', user)
+      .then(res => {
+        this.setState({
+          submitted: true
+        })
+        console.log("time for redirect")
+      })
+      
   }
 
   render() {
+    if(this.state.submitted===true){
+      return(<Redirect to={{
+        pathname: '/confirmation',
+        state: { email: this.state.email }
+    }} />)
+    }
     return (
       <div className="register-page">
         <nav id="navbar-main" className="navbar navbar-main navbar-expand-lg navbar-transparent headroom">
@@ -370,7 +382,7 @@ export default class CreateUser extends Component {
         </div>
       </div>
     </div>
-    
+
     <footer className="footer">
       <div className="container">
         <div className="row row-grid align-items-center mb-5">

@@ -4,12 +4,21 @@ export default class Confirmation extends Component {
     constructor(props) {
       super(props);
   //binding so that this can be used
+  
       this.onChangeOtp = this.onChangeOtp.bind(this);
       this.onSubmit = this.onSubmit.bind(this);
       this.state = {
-        otp: ''
+        otp: '',
+        email:''
       }
     }
+
+    componentDidMount() {
+      this.setState({
+        email: this.props.location.state.email
+      })
+    }
+
     onChangeOtp(e) {
         this.setState({
           otp: e.target.value
@@ -24,9 +33,8 @@ export default class Confirmation extends Component {
     
         console.log(Otp);
     
-        axios.post('https://tindev9044.herokuapp.com/confirmation/', Otp)
+        axios.post('http://localhost:5000/confirmation/', Otp)
           .then(res => {
-
             if (res.status == 200) {
               window.location = "/user"
           } 
@@ -39,6 +47,7 @@ export default class Confirmation extends Component {
       
 render(){
     return(<div>
+    <h1>{this.state.email}</h1>
         <form onSubmit={this.onSubmit}>
             <input type="text" 
             required
