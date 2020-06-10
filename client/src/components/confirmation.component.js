@@ -36,7 +36,7 @@ export default class Confirmation extends Component {
     
         console.log(Otp);
     
-        axios.post('http://localhost:5000/confirmation/', Otp)
+        axios.post('https://tindev9044.herokuapp.com/confirmation/', Otp)
           .then(res => {
             if (res.data.type === 200) {
               this.setState({
