@@ -8,6 +8,8 @@ import CreateExercise from "./components/create-exercise.component";
 import CreateUser from "./components/create-user.component";
 import Confirmation from "./components/confirmation.component";
 import Welcome from "./components/welcome.component"
+import PersonalInfo from "./components/create-profile-components/create-personalInfo.component"
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <Route path="/" exact component={Welcome} />
       <Route path="/user" component={CreateUser} />
       <Route path="/confirmation" component={Confirmation} />
+      <Route path="/personalInfo" component={PersonalInfo} />
       
     </Router>
   );

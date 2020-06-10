@@ -31,12 +31,14 @@ connection.once('open', () => {
 const exercisesRouter = require('./routes/exercises');
 const usersRouter = require('./routes/users');
 const confirmationRouter = require('./routes/confirmation');
+const personalInfoRouter = require('./routes/personalInfo');
 
 //setting the child urls to parent urls
 app.use(express.static(path.join(__dirname, "client", "build")))
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
 app.use('/confirmation', confirmationRouter);
+app.use('/personalInfo', personalInfoRouter);
 
 //heroku added
 app.get("*", (req, res) => {

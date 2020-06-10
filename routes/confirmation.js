@@ -16,7 +16,7 @@ router.route('/').post((req, res, next) => {
             user.isVerified = true;
             user.save(function (err) {
                 if (err) { return res.status(500).send({  type: 400,msg: err.message }); }
-                return(res.status(200).send({ type:200,user:user,msg: "Your account has been verified." }));
+                return(res.status(200).send({ type:200,User:user,msg: "Your account has been verified." }));
             });
         });
     });

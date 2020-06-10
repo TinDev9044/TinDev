@@ -33,7 +33,7 @@ router.route('/add').post((req, res, next) => {
             if (err) { 
               console.log(err);
               return res.status(500).send({ msg: err.message }); }
-            return(res.status(200).send(email + 'Registered!' ));
+            return(res.status(200).send({type:200,User:newUser, msg: "Succesfully Registered. Pls Verify Email" }));
         });
     });
 });

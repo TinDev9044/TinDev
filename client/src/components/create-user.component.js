@@ -14,7 +14,8 @@ export default class CreateUser extends Component {
     this.state = {
       email: '',
       password: '',
-      submitted: false
+      submitted: false,
+      User:{}
     }
   }
   onSignUp(){
@@ -49,12 +50,18 @@ export default class CreateUser extends Component {
 
     console.log(user);
 
-    axios.post('https://tindev9044.herokuapp.com/users/add', user)
+    axios.post('http://localhost:5000/users/add', user)
       .then(res => {
+        if(res.data.type===200){
         this.setState({
-          submitted: true
+          submitted: true,
+          User:res.data.User
         })
         console.log("time for redirect")
+      }
+      else{
+      console.log("Erroorrr after post at return time")
+      }
       })
       
   }
@@ -63,7 +70,7 @@ export default class CreateUser extends Component {
     if(this.state.submitted===true){
       return(<Redirect to={{
         pathname: '/confirmation',
-        state: { email: this.state.email }
+        state: { User: this.state.User }
     }} />)
     }
     return (
