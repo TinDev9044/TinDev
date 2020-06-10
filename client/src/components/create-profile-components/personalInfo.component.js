@@ -40,7 +40,6 @@ export default class PersonalInfo extends Component {
          User:this.props.User
       }
   }
-  
   onChangefirstName(e) {
       this.setState({
         firstName: e.target.value
@@ -132,8 +131,9 @@ export default class PersonalInfo extends Component {
       }
   
       console.log(personelInfo);
-      axios.post('http://localhost:5000/personalInfo/add', personelInfo)
+      axios.post('https://tindev9044.herokuapp.com/personalInfo/add', personelInfo)
         .then(res => {
+          alert("Success")
           console.log("time for redirect")
         }).catch(function(error) {
           console.log(error)
