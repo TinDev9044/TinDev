@@ -3,6 +3,7 @@ import FileBase64 from 'react-file-base64';
 import axios from 'axios';
 import { Redirect} from 'react-router-dom';
 
+
 export default class PersonalInfo extends Component {
     constructor(props) {
       super(props);
@@ -133,7 +134,6 @@ export default class PersonalInfo extends Component {
       console.log(personelInfo);
       axios.post('https://tindev9044.herokuapp.com/personalInfo/add', personelInfo)
         .then(res => {
-          alert("Success")
           console.log("time for redirect")
         }).catch(function(error) {
           console.log(error)
@@ -418,7 +418,7 @@ export default class PersonalInfo extends Component {
     <section className="text-center">
       <div className="row mt-5">
         <div className="col-md-12">
-          <button className="btn btn-primary" type="submit">Save Changes</button>
+          <button className="btn btn-primary" type="submit" href="#link2">Save Changes</button>
           <button className="btn btn-outline-primary" type="reset">Cancel</button>
         </div>
       </div>

@@ -3,15 +3,73 @@ import axios from 'axios';
 import { Redirect} from 'react-router-dom';
 export default class QualificationInfo extends Component {
     constructor(props) {
-      super(props);
-  //binding so that this can be used
-        
+      super(props);        
+      this.onChangeinstitute = this.onChangeinstitute.bind(this);
+      this.onChangecourse = this.onChangecourse.bind(this);
+      this.onChangegrade = this.onChangegrade.bind(this);
+      this.onChangestartYear = this.onChangestartYear.bind(this);
+      this.onChangeendYear = this.onChangeendYear.bind(this);
+      this.onSubmit = this.onSubmit.bind(this);
+      this.state = {
+         institute:'',
+         course:'',
+         grade:'',
+         startYear:'2014',
+         endYear:'2019',
+         User:this.props.User
+      }
+  }
+  onChangeinstitute(e) {
+      this.setState({
+        institute: e.target.value
+      })
+    }
+  onChangecourse(e) {
+      this.setState({
+          course: e.target.value
+      })
+    }
+  onChangegrade(e) {
+      this.setState({
+          grade: e.target.value
+      })
+    }
+  onChangestartYear(e) {
+      this.setState({
+          startYear: e.target.value
+      })
+    }
+  onChangeendYear(e) {
+      this.setState({
+          endYear: e.base64.toString()
+      })
+    }
+    onSubmit(e) {
+      e.preventDefault();
+  console.log(this.state.User._id)
+      const qualificationInfo = {
+          userId:this.state.User._id,
+          institute:this.state.institute,
+          course:this.state.course,
+          grade:this.state.grade,
+          startYear:this.state.startYear,
+          endYear:this.state.endYear,
+      }
+  
+      console.log(qualificationInfo);
+      axios.post('https://tindev9044.herokuapp.com/qualificationInfo/add', qualificationInfo)
+        .then(res => {
+          console.log("time for redirect from qualification")
+        }).catch(function(error) {
+          console.log(error)
+      })
         
     }
+    
     render(){
         return(<div>
                <div className="tab-pane" id="link2">
-                    <form className="js-validate">
+                    <form className="js-validate" onSubmit={this.onSubmit}>
                       <div className="container">
                       <header>
                         <h3 className="title mt-3">Education</h3>
@@ -23,19 +81,22 @@ export default class QualificationInfo extends Component {
                               Institution/Place of Education
                               <span className="text-danger">*</span>
                             </label>
-                            <input type="text" className="form-control" name="Institution" placeholder="Ex: How to University" aria-label="Ex: How to University" required=""/>
+                            <input type="text" value={this.state.institute}
+                    onChange={this.onChangeinstitute}  className="form-control" name="Institution" placeholder="Ex: How to University" aria-label="Ex: How to University" required=""/>
                             <br/>
                             <label className="labels">
                               Study Program
                               <span className="text-danger">*</span>
                             </label>
-                            <input type="text" className="form-control" name="Institution" placeholder="Ex: Bachelor's" aria-label="Ex: Bachelor's" required=""/>
+                            <input type="text" value={this.state.course}
+                    onChange={this.onChangecourse}  className="form-control" name="Institution" placeholder="Ex: Bachelor's" aria-label="Ex: Bachelor's" required=""/>
                             <br/>
                             <label className="labels">
                               Grade
                               <span className="text-danger">*</span>
                             </label>
-                            <input type="text" className="form-control" name="Grade" placeholder="Grade" aria-label="Grade" required=""/>
+                            <input type="text" value={this.state.grade}
+                    onChange={this.onChangegrade} className="form-control" name="Grade" placeholder="Grade" aria-label="Grade" required=""/>
                           </div>
                         </div>
                         <br/>
@@ -47,41 +108,14 @@ export default class QualificationInfo extends Component {
                             <div className="row">
                               <div className="col-md-12">
                                 <div className="form-group">
-                                  <select className="form-control" data-trigger name="choices-single-default" id="choices-single-default">
-                                    <option>1986</option>
-                                    <option>1987</option>
-                                    <option>1988</option>
-                                    <option selected="selected">1989</option>
-                                    <option>1990</option>
-                                    <option>1991</option>
-                                    <option>1992</option>
-                                    <option>1993</option>
-                                    <option>1994</option>
-                                    <option>1995</option>
-                                    <option>1996</option>
-                                    <option>1997</option>
-                                    <option>1998</option>
-                                    <option>1999</option>
-                                    <option>2000</option>
-                                    <option>2001</option>
-                                    <option>2002</option>
-                                    <option>2003</option>
-                                    <option>2004</option>
-                                    <option>2005</option>
-                                    <option>2006</option>
-                                    <option>2007</option>
-                                    <option>2008</option>
-                                    <option>2009</option>
-                                    <option>2010</option>
-                                    <option>2011</option>
-                                    <option>2012</option>
-                                    <option>2013</option>
-                                    <option>2014</option>
-                                    <option>2015</option>
-                                    <option>2016</option>
-                                    <option>2017</option>
-                                    <option>2018</option>
-                                    <option>2019</option>
+                                  <select className="form-control" value={this.state.startYear}
+                    onChange={this.onChangestartYear} data-trigger name="choices-single-default" id="choices-single-default">
+                                    <option selected="selected"  value="2014">2014</option>
+                                    <option  value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
                                   </select>
                                 </div>
                               </div>
@@ -94,41 +128,12 @@ export default class QualificationInfo extends Component {
                             <div className="row">
                               <div className="col-md-12">
                                 <div className="form-group">
-                                  <select className="form-control" data-trigger placeholder="Year" name="choices-single-default" id="choices-single-default">
-                                    <option>1986</option>
-                                    <option>1987</option>
-                                    <option>1988</option>
-                                    <option selected="selected">1989</option>
-                                    <option>1990</option>
-                                    <option>1991</option>
-                                    <option>1992</option>
-                                    <option>1993</option>
-                                    <option>1994</option>
-                                    <option>1995</option>
-                                    <option>1996</option>
-                                    <option>1997</option>
-                                    <option>1998</option>
-                                    <option>1999</option>
-                                    <option>2000</option>
-                                    <option>2001</option>
-                                    <option>2002</option>
-                                    <option>2003</option>
-                                    <option>2004</option>
-                                    <option>2005</option>
-                                    <option>2006</option>
-                                    <option>2007</option>
-                                    <option>2008</option>
-                                    <option>2009</option>
-                                    <option>2010</option>
-                                    <option>2011</option>
-                                    <option>2012</option>
-                                    <option>2013</option>
-                                    <option>2014</option>
-                                    <option>2015</option>
-                                    <option>2016</option>
-                                    <option>2017</option>
-                                    <option>2018</option>
-                                    <option>2019</option>
+                                  <select className="form-control" value={this.state.endYear}
+                    onChange={this.onChangeendYear} data-trigger placeholder="Year" name="choices-single-default" id="choices-single-default">
+                                    <option selected="selected" value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
                                   </select>
                                 </div>
                               </div>

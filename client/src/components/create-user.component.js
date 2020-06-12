@@ -308,7 +308,7 @@ export default class CreateUser extends Component {
                 <div className="input-group-prepend">
                   <span className="input-group-text"><i className="ni ni-email-83"></i></span>
                 </div>
-                <input  type="text" placeholder="Phone Number"
+                <input  type="text" placeholder="Email"
                 required
                 className="form-control"
                 //setting the email to blank

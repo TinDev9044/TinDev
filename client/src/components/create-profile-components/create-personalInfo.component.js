@@ -15,10 +15,12 @@ export default class CreatePersonalInfo extends Component {
       User:this.props.location.state.User
    }
     }
-
+   
+  
       render(){
           return(
               <div className="checkout-page">
+              
   <div className="wrapper">
     <div className="section-shaped my-0 skew-separator skew-mini">
       <div className="page-header page-header-small header-filter">
@@ -107,19 +109,19 @@ export default class CreatePersonalInfo extends Component {
                 <PersonalInfo User={this.state.User}/>
                 </div>
                 <div className="tab-pane" id="link2">
-                <QualificationsInfo />
+                <QualificationsInfo  User={this.state.User} />
                 </div>
                 <div className="tab-pane" id="link3">
-                <SkillsInfo />
+                <SkillsInfo User={this.state.User}/>
                 </div>
                 <div className="tab-pane" id="link4">
-                <CertificationsInfo />
+                <CertificationsInfo User={this.state.User}/>
                 </div>
                 <div className="tab-pane" id="link5">
-                <ProjectInfo />
+                <ProjectInfo User={this.state.User} />
                 </div>
                 <div className="tab-pane" id="link6">
-                <SocialInfo />
+                <SocialInfo User={this.state.User}/>
                 </div>
 
                 </div>

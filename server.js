@@ -32,6 +32,11 @@ const exercisesRouter = require('./routes/exercises');
 const usersRouter = require('./routes/users');
 const confirmationRouter = require('./routes/confirmation');
 const personalInfoRouter = require('./routes/personalInfo');
+const qualificationInfoRouter = require('./routes/qualificationInfo');
+const skillsImageRouter = require('./routes/skillsImage');
+const skillsInfoRouter = require('./routes/skillsInfo');
+const certificationsInfoRouter = require('./routes/certificationsInfo');
+const socialInfoRouter = require('./routes/socialInfo');
 
 //setting the child urls to parent urls
 app.use(express.static(path.join(__dirname, "client", "build")))
@@ -39,6 +44,12 @@ app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
 app.use('/confirmation', confirmationRouter);
 app.use('/personalInfo', personalInfoRouter);
+app.use('/qualificationInfo', qualificationInfoRouter);
+app.use('/skillsImage', skillsImageRouter);
+app.use('/skillsInfo', skillsInfoRouter);
+app.use('/certificationsInfo', certificationsInfoRouter);
+app.use('/socialInfo', socialInfoRouter);
+
 
 //heroku added
 app.get("*", (req, res) => {

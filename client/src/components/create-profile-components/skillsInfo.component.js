@@ -1,17 +1,85 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect, Link} from 'react-router-dom';
+import TodoItems from './TodoItems.component.js';
 
-export default class SkillsInfo extends Component {
+const Skillsinfo = props => (
+  <option value={props.skill.techName} selected>{props.skill.techName}</option>
+)
+
+export default class skillsInfo extends Component {
     constructor(props) {
       super(props);
-  
+      this.onChangetechName=this.onChangetechName.bind(this)
+      this.addItem=this.addItem.bind(this)
+      this.onSubmit = this.onSubmit.bind(this)
+      this.state = {
+        items: [],
+        skills: [],
+      techName:'',
+      User:this.props.User
     }
+    }
+    //loading excercise data if this page is loaded directly
+  componentDidMount() {
+    axios.get('https://tindev9044.herokuapp.com/skillsImage/')
+      .then(response => {
+        this.setState({ skills: response.data })
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+  onChangetechName(e){
+    this.setState({
+      techName : e.target.value
+    })
+  }
+  addItem(e){
+    if (this.state.techName !== "") {
+      var newItem = {
+        techName: this.state.techName,
+      };
+   
+      this.setState((prevState) => {
+        return { 
+          items: prevState.items.concat(newItem)
+        };
+      });
+     
+      this.state.techName = "";
+      console.log(this.state.items);
+      e.preventDefault();
+    }
+  }
+  SkillList() {
+    return this.state.skills.map(currentskill => {
+      return <Skillsinfo skill={currentskill} key={currentskill._id}/>;
+    })
+  }
+  onSubmit(e) {
+    e.preventDefault();
+console.log(this.state.User)
+    const skillInfo = {
+        userId:this.state.User,
+        skill:this.state.items
+    }
+
+    console.log(skillInfo);
+    axios.post('https://tindev9044.herokuapp.com/skillsInfo/add', skillInfo)
+      .then(res => {
+        console.log("time for redirect from skills")
+      }).catch(function(error) {
+        console.log(error)
+    })
+      
+  }
+  
     render()
     {
         return(
 <div className="tab-pane" id="link3">
-<form className="js-validate">
+<form className="js-validate" onSubmit={this.onSubmit}>
   <div className="container">
   <header>
     <h3 className="title mt-3">Skills</h3>
@@ -20,56 +88,19 @@ export default class SkillsInfo extends Component {
     <div className="row row-input">
       <div className="col-sm-6 col-12 offset-sm-2">
         <div className="form-group">
-          <select className="form-control" data-trigger name="choices-single-default" id="choices-single-default">
-            <option selected>Python</option>
-            <option value="2">Angular</option>
-            <option value="3">Bootsrap</option>
-            <option value="4">Vue</option>
-            <option value="4">React</option>
+          <select  onChange={this.onChangetechName}  className="form-control" data-trigger name="choices-single-default" id="choices-single-default">
+          { this.SkillList() }
           </select>
         </div>
       </div>
       <div className="col-sm-2 col-12 pl-lg-0">
-        <button type="submit" className="btn btn-primary btn-block">+</button>
+        <button className="btn btn-primary btn-block" onClick={this.addItem}>+</button>
       </div>
     </div>
     <br/>
   
   <div className="row">
-    <div className="col-lg-4 col-md-6">
-      <div className="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="autohide">
-        <div className="toast-header">
-          <img src="../assets/img/bootstrap.jpg" className="rounded mr-2" alt="..."/>
-          <strong className="mr-auto">Bootsrap</strong>
-          <button type="button" className="ml-2 close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-4 col-md-6">
-      <div className="toast bg-info" role="alert" aria-live="assertive" aria-atomic="true">
-        <div className="toast-header text-white">
-          <img src="../assets/img/react.jpg" className="rounded mr-2" alt="..."/>
-          <strong className="mr-auto">React</strong>
-          <button type="button" className="ml-2 close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-4 col-md-6">
-      <div className="toast bg-warning mt-md-4 mt-lg-0" role="alert" aria-live="assertive" aria-atomic="true">
-        <div className="toast-header text-white">
-          <img src="../assets/img/angular.jpg" className="rounded mr-2" alt="..."/>
-          <strong className="mr-auto">Angular</strong>
-          <button type="button" className="ml-2 close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    
+  <TodoItems entries={this.state.items}/>
   </div>
       <section className="text-center">
       <div className="row mt-5">

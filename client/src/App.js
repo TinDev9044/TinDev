@@ -9,6 +9,8 @@ import CreateUser from "./components/create-user.component";
 import Confirmation from "./components/confirmation.component";
 import Welcome from "./components/welcome.component"
 import PersonalInfo from "./components/create-profile-components/create-personalInfo.component"
+import SkillsImage from "./components/skillsImageUpload.component"
+
 
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
       <Route path="/user" component={CreateUser} />
       <Route path="/confirmation" component={Confirmation} />
       <Route path="/personalInfo" component={PersonalInfo} />
+      <Route path="/skillsImage" component={SkillsImage} />
       
     </Router>
   );
