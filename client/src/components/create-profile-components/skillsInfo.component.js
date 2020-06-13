@@ -4,7 +4,8 @@ import { Redirect, Link} from 'react-router-dom';
 import TodoItems from './TodoItems.component.js';
 
 const Skillsinfo = props => (
-  <option value={props.skill.techName} selected>{props.skill.techName}</option>
+  
+  <option value={props.skill.techName} id={props.skill._id} title={props.skill.techImage}>{props.skill.techName}</option>
 )
 
 export default class skillsInfo extends Component {
@@ -15,8 +16,11 @@ export default class skillsInfo extends Component {
       this.onSubmit = this.onSubmit.bind(this)
       this.state = {
         items: [],
+        itemsId:[],
         skills: [],
       techName:'',
+      techId:'',
+      techImg:'',
       User:this.props.User
     }
     }
@@ -32,18 +36,25 @@ export default class skillsInfo extends Component {
   }
   onChangetechName(e){
     this.setState({
-      techName : e.target.value
+      techName : e.target.value,
+      techId : e.target.selectedOptions[0].id,
+      techImg :  e.target.selectedOptions[0].title
     })
   }
   addItem(e){
     if (this.state.techName !== "") {
       var newItem = {
         techName: this.state.techName,
+        techImage : this.state.techImg
+      };
+      var newItemId = {
+        techId: this.state.techId,
       };
    
       this.setState((prevState) => {
         return { 
-          items: prevState.items.concat(newItem)
+          items: prevState.items.concat(newItem),
+          itemsId : prevState.itemsId.concat(newItemId)
         };
       });
      
@@ -61,8 +72,8 @@ export default class skillsInfo extends Component {
     e.preventDefault();
 console.log(this.state.User)
     const skillInfo = {
-        userId:this.state.User,
-        skill:this.state.items
+        userId:this.state.User._id,
+        skill:this.state.itemsId
     }
 
     console.log(skillInfo);
@@ -88,7 +99,7 @@ console.log(this.state.User)
     <div className="row row-input">
       <div className="col-sm-6 col-12 offset-sm-2">
         <div className="form-group">
-          <select  onChange={this.onChangetechName}  className="form-control" data-trigger name="choices-single-default" id="choices-single-default">
+          <select  onChange={this.onChangetechName}  className="form-control" data-trigger name="choices-single-default" id="ski">
           { this.SkillList() }
           </select>
         </div>

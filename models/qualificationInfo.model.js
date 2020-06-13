@@ -18,9 +18,7 @@ const qualificationInfoSchema = new Schema({
     minlength: 3
   },
   grade: {
-    type: String,
-    required: true,
-    minlength: 4
+    type: String
   },
   startYear:{
       type: String,
