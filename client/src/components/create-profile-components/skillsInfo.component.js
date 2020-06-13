@@ -5,7 +5,7 @@ import TodoItems from './TodoItems.component.js';
 
 const Skillsinfo = props => (
   
-  <option value={props.skill.techName} id={props.skill._id} title={props.skill.techImage}>{props.skill.techName}</option>
+  <option value={props.skill.techName} id={props.skill._id} title={props.skill.techImage}>{props.skill.techName.toUpperCase()}</option>
 )
 
 export default class skillsInfo extends Component {
@@ -58,7 +58,7 @@ export default class skillsInfo extends Component {
   addItem(e){
     if (this.state.techName !== "") {
       var newItem = {
-        techName: this.state.techName,
+        techName: this.state.techName.toUpperCase(),
         techImage : this.state.techImg
       };
       var newItemId = {
