@@ -13,6 +13,8 @@ export default class skillsInfo extends Component {
       super(props);
       this.onChangetechName=this.onChangetechName.bind(this)
       this.addItem=this.addItem.bind(this)
+      this.onChangeaboutMe = this.onChangeaboutMe.bind(this)
+      this.onChangehobby = this.onChangehobby.bind(this)
       this.onSubmit = this.onSubmit.bind(this)
       this.state = {
         items: [],
@@ -21,6 +23,8 @@ export default class skillsInfo extends Component {
       techName:'',
       techId:'',
       techImg:'',
+      aboutMe:'',
+      hobby:'',
       User:this.props.User
     }
     }
@@ -33,6 +37,16 @@ export default class skillsInfo extends Component {
       .catch((error) => {
         console.log(error);
       })
+  }
+  onChangeaboutMe(e){
+    this.setState({
+      aboutMe : e.target.value
+    })
+  }
+  onChangehobby(e){
+    this.setState({
+      hobby : e.target.value
+    })
   }
   onChangetechName(e){
     this.setState({
@@ -73,6 +87,8 @@ export default class skillsInfo extends Component {
 console.log(this.state.User)
     const skillInfo = {
         userId:this.state.User._id,
+        hobby:this.state.hobby,
+        aboutMe:this.state.aboutMe,
         skill:this.state.itemsId
     }
 
@@ -96,15 +112,53 @@ console.log(this.state.User)
     <h3 className="title mt-3">Skills</h3>
   </header>
   <hr className="line-primary"/>
+  <div className="row row-input">
+  <div className="col-md-12">
+  <div className="js-form-message">
+          <label className="labels">
+            About Me
+            <span className="text-danger">*</span>
+          </label>
+          <div className="form-group">
+            <textarea className="form-control" value={this.state.aboutMe}
+                    onChange={this.onChangeaboutMe} id="exampleFormControlTextarea1" rows="3" spellcheck="false" placeholder="Write something about project..."></textarea>
+          </div>
+        </div>
+        </div>
+  </div>
+  <div className="row row-input">
+  <div className="col-md-12">
+  <div className="js-form-message">
+          <label className="labels">
+            Hobby
+            <span className="text-danger">*</span>
+          </label>
+          <div className="form-group">
+          <input type="text" className="form-control" value={this.state.hobby}
+                    onChange={this.onChangehobby} name="Certificate" placeholder="Certificate Name" aria-label="Certificate Name" required=""/>
+          </div>
+        </div>
+        </div>
+  </div>
+    <div className="row">
+    <div className="col-md-12">
+    <label className="labels">
+            Skills
+            <span className="text-danger">*</span>
+          </label>
+       </div>
+    </div>
     <div className="row row-input">
-      <div className="col-sm-6 col-12 offset-sm-2">
+
+      <div className="col-md-10">
+      
         <div className="form-group">
           <select  onChange={this.onChangetechName}  className="form-control" data-trigger name="choices-single-default" id="ski">
           { this.SkillList() }
           </select>
         </div>
       </div>
-      <div className="col-sm-2 col-12 pl-lg-0">
+      <div className="col-md-2">
         <button className="btn btn-primary btn-block" onClick={this.addItem}>+</button>
       </div>
     </div>

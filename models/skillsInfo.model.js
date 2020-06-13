@@ -8,6 +8,13 @@ const skillsInfoSchema = new Schema({
     required: true, 
     ref: 'User' 
   },
+  aboutMe: {
+    type: String,
+    minlength:100
+  },
+  hobby:{
+    type: String
+  },
   skill: {
     type: {},
     required: true

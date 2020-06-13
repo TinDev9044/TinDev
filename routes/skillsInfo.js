@@ -5,6 +5,8 @@ router.route('/add').post((req, res, next) => {
     const SK = new skillsInfo();
     SK._userId = req.body.userId;
     SK.skill = req.body.skill;
+    SK.aboutMe = req.body.aboutMe;
+    SK.hobby = req.body.hobby;
     SK.save(function (err) {
       if (err) { return res.status(500).send({ msg: "Error HEre"+err.message }); }
       return res.status(200).send({type:200,msg:"Success",SK:SK})

@@ -65,31 +65,16 @@ export default class CreatePersonalInfo extends Component {
                       <ul className="nav nav-pills nav-pills-primary flex-column" role="tablist">
                         <li className="nav-item p-0 text-center">
                           <a className="nav-link active" data-toggle="tab" href="#link1" role="tablist">
-                            Personal Info 
+                            Personal Information 
                           </a>
                         </li>
                         <li className="nav-item p-0 text-center">
                           <a className="nav-link" data-toggle="tab" href="#link2" role="tablist">
-                            Qualification Details 
-                          </a>
-                        </li>
-                        <li className="nav-item p-0 text-center">
-                          <a className="nav-link" data-toggle="tab" href="#link3" role="tablist">
-                            Skills
-                          </a>
-                        </li>
-                        <li className="nav-item p-0 text-center">
-                          <a className="nav-link" data-toggle="tab" href="#link4" role="tablist">
-                            Certifications / Achievements
-                          </a>
-                        </li>
-                        <li className="nav-item p-0 text-center">
-                          <a className="nav-link" data-toggle="tab" href="#link5" role="tablist">
-                            Personal Projects
+                            About Me
                           </a>
                         </li>
                         <li className="nav-item text-center">
-                          <a className="nav-link" data-toggle="tab" href="#link6" role="tablist">
+                          <a className="nav-link" data-toggle="tab" href="#link4" role="tablist">
                             Social
                           </a>
                         </li>
@@ -109,18 +94,9 @@ export default class CreatePersonalInfo extends Component {
                 <PersonalInfo User={this.state.User}/>
                 </div>
                 <div className="tab-pane" id="link2">
-                <QualificationsInfo  User={this.state.User} />
-                </div>
-                <div className="tab-pane" id="link3">
                 <SkillsInfo User={this.state.User}/>
                 </div>
                 <div className="tab-pane" id="link4">
-                <CertificationsInfo User={this.state.User}/>
-                </div>
-                <div className="tab-pane" id="link5">
-                <ProjectInfo User={this.state.User} />
-                </div>
-                <div className="tab-pane" id="link6">
                 <SocialInfo User={this.state.User}/>
                 </div>
 
