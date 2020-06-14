@@ -10,6 +10,7 @@ import Confirmation from "./components/confirmation.component";
 import Welcome from "./components/welcome.component"
 import PersonalInfo from "./components/create-profile-components/create-personalInfo.component"
 import SkillsImage from "./components/skillsImageUpload.component"
+import imageUpload from "./components/image.component"
 
 
 
@@ -22,7 +23,7 @@ function App() {
       <Route path="/confirmation" component={Confirmation} />
       <Route path="/personalInfo" component={PersonalInfo} />
       <Route path="/skillsImage" component={SkillsImage} />
-      
+      <Route path="/imageUpload" component={CreateExercise}/>
     </Router>
   );
 }

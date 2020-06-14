@@ -40,11 +40,11 @@ export default class CreatePersonalInfo extends Component {
     <div className="upper">
       <div className="container">
         <div className="row">
-          <div className="col-lg-4">
+          <div className="col-lg-3">
             <div className="container">
               <h3 className="title text-white mt-3">Menu</h3>
               <div className="row">
-                <div className="card">
+                <div className="card" style={{width : "100%"}}>
                   <div className="card-body">
                     <div>
                       <div className="progress-container progress-primary">
@@ -85,7 +85,7 @@ export default class CreatePersonalInfo extends Component {
               </div>
             </div>
           </div>
-          <div className="col-lg-8">
+          <div className="col-lg-9">
             <div className="card">
               <div className="">
                 <div className="tab-content">
